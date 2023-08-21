@@ -1,21 +1,22 @@
+import { Table, TableGrid, TableHead, TableBody, TableCell } from "./TransactionHistory.styled"
 export const TransactionHistory = ({items}) => {
-    return <table class="transaction-history">
-  <thead>
+    return <Table class="transaction-history">
+  <TableHead>
     <tr>
       <th>Type</th>
       <th>Amount</th>
       <th>Currency</th>
     </tr>
-  </thead>
+  </TableHead>
 
-  <tbody>{items.map (item => {
-return  <tr key={item.id}>
-<td>{item.type}</td>
-<td>{item.amount}</td>
-<td>{item.currency}</td>
-</tr>
+  <TableBody>{items.map (item => {
+return  <TableGrid key={item.id}>
+<TableCell>{item.type}</TableCell>
+<TableCell>{item.amount}</TableCell>
+<TableCell>{item.currency}</TableCell>
+</TableGrid>
   })}
     
-  </tbody>
-</table>
+  </TableBody>
+</Table>
 }
