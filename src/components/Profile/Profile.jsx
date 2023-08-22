@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
-import { List, ListItem, Description } from './Profile.styled';
+import { List, ListItem, Description, Images, ProfileCard, Name, Quantity } from './Profile.styled';
 export const Profile = ({ items }) => {
-  return <div class="profile">
+  return <ProfileCard class="profile">
     <Description class="description">
-      <img
+      <Images
         src={items.avatar}
         alt="User avatar"
         class="avatar"
       />
-      <p class="name">{items.username}</p>
+      <Name class="name">{items.username}</Name>
       <p class="tag">{items.tag}</p>
       <p class="location">{items.location}</p>
     </Description>
@@ -16,18 +16,18 @@ export const Profile = ({ items }) => {
     <List class="stats">
       <ListItem>
         <span class="label">Followers</span>
-        <span class="quantity">{items.stats.followers}</span>
+        <Quantity class="quantity">{items.stats.followers}</Quantity>
       </ListItem>
       <ListItem>
         <span class="label">Views</span>
-        <span class="quantity">{items.stats.views}</span>
+        <Quantity class="quantity">{items.stats.views}</Quantity>
       </ListItem>
       <ListItem>
         <span class="label">Likes</span>
-        <span class="quantity">{items.stats.likes}</span>
+        <Quantity class="quantity">{items.stats.likes}</Quantity>
       </ListItem>
     </List>
-  </div>
+  </ProfileCard>
 }
 
 
